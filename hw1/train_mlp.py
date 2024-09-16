@@ -45,8 +45,9 @@ if __name__ == '__main__':
   y = np.array()
   X = np.array()
 
+  # TA: write your code here 
 
-
+  
   # save trained MLP in output_file
   pickle.dump(model, open(args.output_file, 'wb'))
   print('MLP classifier trained successfully')

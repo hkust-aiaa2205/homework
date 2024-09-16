@@ -10,10 +10,9 @@ Please download data from kaggle with [this link](https://www.kaggle.com/competi
 
 For the baselines, we will provide code (templates) and instructions for one feature representations (MFCC-Bag-of-Features and three classifiers (LR, SVM and MLP). Assuming you are under Ubuntu OS and under this directory (homework/hw1/). Open a shell terminal to run the commands.
 
-You will need to complete the code in `train_kmeans.py, get_bof.py, train_*.py, test_*.py` to get a baseline output.
+You will need to complete the code in `train_*.py, test_*.py (e.g., train_LR.py)` to get a baseline output.
 You could follow the comments we provide or you could write your own.
 
-### MFCC-Bag-Of-Features
 
 Let's create the folders we need first:
 
@@ -31,7 +30,16 @@ Install python dependencies by:
 $ pip install scikit-learn pandas tqdm numpy
 ```
 
-2. Get MFCCs
+
+### Step 0: generate MFCC-Bag-Of-Features
+
+!!! Reminder!!!
+
+To reduce the difficulty of this task, we provide the MFCC-Bag-Of-Features for all training/test videos. You can download the features (i.e., the "bof.zip" file) from kaggle with [this link](https://www.kaggle.com/competitions/hkustgz-aiaa-2205-hw-1-fall-2024/data).
+This step is optional. You can skip this step and move to the "Step 1: three baselines" section below.
+But, we encourage you to do this step if you want to learn more about some feature extraction technologies.
+
+1. Get MFCCs
 
 You have downloaded the files from Kaggle. First, unzip mfcc.tgz by:
 
@@ -39,7 +47,7 @@ You have downloaded the files from Kaggle. First, unzip mfcc.tgz by:
 $ tar zxvf  mfcc.tgz
 ```
 
-3. K-Means clustering
+2. K-Means clustering
 
 As taught in the class, we will use K-Means to get feature codebook from the MFCCs. Since there are too many feature lines, we will randomly select a subset (20%) for K-Means clustering by:
 
@@ -53,7 +61,7 @@ Now we train it by (50 clusters, this would take about 5 minutes):
 $ python train_kmeans.py selected.mfcc.csv 50 kmeans.50.model
 ```
 
-4. Feature extraction
+3. Feature extraction
 
 Now we have the codebook, we will get bag-of-features (a.k.a. bag-of-words) using the codebook and the MFCCs. First, we need to get video names. We give you this in `videos.name.lst`.
 
@@ -61,15 +69,25 @@ Now we have the codebook, we will get bag-of-features (a.k.a. bag-of-words) usin
 Now we extract the feature representations for each video (this would take about 7 minutes):
 
 ```
-$ python get_bof.py kmeans.50.model 50 videos.name.lst --mfcc_path mfcc/ --output_path bof/
+$ python get_bof.py kmeans.50.model 50 labels/videos.name.lst --mfcc_path mfcc/ --output_path bof/
 ```
 
 <!-- Now you can follow [here](#svm-classifier) to train SVM classifiers or [MLP](#mlp-classifier) ones. -->
-We provide the training and testing of three baselines below.
+### Step 1: three baselines
+
+obtain MFCC-Bag-Of-Features
+
+1) if you have successfully done "Step 0: generate MFCC-Bag-Of-Features", you can skip this;
+2) if you skipped "Step 0: generate MFCC-Bag-Of-Features", extract all files from the downloaded "bof.zip" into the "bof" folder;
+
+Now, your "bof" folder will contain many files, each of which contains the 50-dim MFCC-Bag-Of-Feature for a video;
+
+
+Next, we provide the training and testing of three baselines below.
 
 ### SVM classifier
 
-From the previous sections, we have extracted two fixed-length vector feature representations for each video. We will use them separately to train classifiers.
+From the previous sections, we have extracted the fixed-length vector feature representation for each video. We will use them separately to train classifiers.
 
 Suppose you are under `hw1` directory. Train SVM by:
 
@@ -130,7 +148,7 @@ We use accuracy as the evaluation metric. Please refer to `sample_submission.csv
 Now here comes the fun part. You can start experimenting with the code and exploring how you can improve your model performance. Some hints:
 
 + Split `trainval.csv` into `train.csv` and `val.csv` to validate your model variants. This is important since the leaderboard limits the number of times you can submit, which means you cannot test most of your experiments on the official test set.
-+ Try different number of K-Means clusters
++ Try different number of K-Means clusters (at Step 0)
 + Try different hyper-parameters for your models (different SVM kernels and Cs, different MLP hidden sizes, etc.). Please refer to [sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier) documentation.
 + Try different fusion or model aggregation methods. For example, you can simply average two model predictions (late fusion).
 + Try bagging and boosting

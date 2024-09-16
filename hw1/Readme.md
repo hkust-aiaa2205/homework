@@ -4,7 +4,7 @@ In this homework we will perform a video classification task (10-class classific
 
 ## Data and Labels
 
-Please download data from kaggle with [this link](https://www.kaggle.com/competitions/hkustgz-aiaa-5032-hw1-spring-2024/data).
+Please download data from kaggle with [this link](https://www.kaggle.com/competitions/hkustgz-aiaa-2205-hw-1-fall-2024/data).
 
 ## Step-by-step baseline instructions
 
@@ -120,7 +120,7 @@ $ python test_mlp.py models/mfcc-50.mlp.model bof 50 labels/test_for_student.lab
 You can then submit the test outputs (the `*.csv` files) to the leaderboard:
 
 ```
-https://www.kaggle.com/competitions/hkustgz-aiaa-5032-hw1-spring-2024/leaderboard
+https://www.kaggle.com/competitions/hkustgz-aiaa-2205-hw-1-fall-2024/leaderboard
 ```
 
 We use accuracy as the evaluation metric. Please refer to `sample_submission.csv` for submission format.

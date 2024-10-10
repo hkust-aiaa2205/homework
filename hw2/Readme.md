@@ -47,3 +47,7 @@ Now here comes the fun part. You can start experimenting with the code and explo
 + Try different overfitting methods (BN, dropout, Early Stopping).
 + Try different fusion or model aggregation methods. For example, you can simply average two model predictions (late fusion).
 
+## Acknowledgement
+
+Dataset borrowed from [https://www.kaggle.com/competitions/hkustgz-aiaa-5032-hw2-Spring-2024/](https://www.kaggle.com/competitions/hkustgz-aiaa-5032-hw2-Spring-2024/).
+

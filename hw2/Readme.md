@@ -4,11 +4,13 @@ In this homework we will perform a video classification task using CNN.
 
 ## Data and Labels
 
-Please download data from kaggle withi this [link](https://www.kaggle.com/competitions/hkustgz-aiaa-5032-hw2-Spring-2024/data).
+Please download data from [https://www.kaggle.com/competitions/hkustgz-aiaa-2205-hw-2-fall-2024/data](https://www.kaggle.com/competitions/hkustgz-aiaa-2205-hw-2-fall-2024/data).
 
 ## Step-by-step baseline instructions
 
-We give you a video folder, video_frames_30fpv_320p. Under each sub folder, there are 30 images from one video, we use the middle image for classification.
+We give you a video folder `video_frames_30fpv_320p`. Under each sub folder, there are 30 images from one video, we use the middle image for classification.
+
+Codebase: [https://github.com/hkust-aiaa2205/homework/tree/main/hw2](https://github.com/hkust-aiaa2205/homework/tree/main/hw2)
 
 ### CNN classifier
 
@@ -31,11 +33,9 @@ $ python CNN_Classifier_test2csv.py
 
 You can then submit the test outputs to the leaderboard:
 
-```
-https://www.kaggle.com/competitions/hkustgz-aiaa-5032-hw2-Spring-2024/
-```
+[https://www.kaggle.com/competitions/hkustgz-aiaa-2205-hw-2-fall-2024](https://www.kaggle.com/competitions/hkustgz-aiaa-2205-hw-2-fall-2024)
 
-We use accuracy as the evaluation metric. Please refer to `**test_for_student.csv**` for submission format.
+We use accuracy as the evaluation metric. Please refer to `test_for_student.csv` for submission format.
 
 ### Things to try to improve your model performance
 
@@ -43,7 +43,7 @@ Now here comes the fun part. You can start experimenting with the code and explo
 
 + Try different data augmentation methods.
 + Try different split ratio of train and validation.
-+ Try diffirent Neural Network Design.
-+ Try diffirent overfitting methods(BN, dropout, Early Stopping).
++ Try different Neural Network Design.
++ Try different overfitting methods (BN, dropout, Early Stopping).
 + Try different fusion or model aggregation methods. For example, you can simply average two model predictions (late fusion).
 

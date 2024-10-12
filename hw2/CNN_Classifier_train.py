@@ -57,15 +57,21 @@ criterion = nn.CrossEntropyLoss()
 
 
 for epoch in range(50):
-    # Metrics here ...
+    # TODO: Metrics variables ...
 
-    
     for i, (inputs, labels) in enumerate(train_loader, 0):
-        # Training code ...
+        # TODO: Training code ...
 
     with torch.no_grad():
         for val_inputs, val_labels in val_loader:
-            # Validation code ...
+            # TODO: Validation code ...
 
+    # TODO: save best model
 
+    # save last model
     torch.save(net.state_dict(), 'model_last.pth')
+
+    # print metrics log
+    print('[Epoch %d] Loss (train/val): %.3f/%.3f' % (epoch + 1, running_loss_train/len(train_loader), running_loss_val/len(val_loader)),
+        ' Acc (train/val): %.2f%%/%.2f%%' % (100 * correct_train/total_train, 100 * correct_val/total_val),
+        ' Epoch Time: %.2f' % (end_time - start_time))

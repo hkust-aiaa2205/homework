@@ -36,8 +36,8 @@ class MyDataset(Dataset):
         return img, label
 
 transform = transforms.Compose([
-        transforms.Resize((224, 224)),
-        transforms.ToTensor()
+    transforms.Resize((224, 224)),
+    transforms.ToTensor()
 ])
 
 test_dataset = MyDataset("video_frames_30fpv_320", "test_for_student.csv", transform)
@@ -51,18 +51,11 @@ net.load_state_dict(torch.load('model_best.pth'))
 net.eval()
 result = []
 with torch.no_grad():
+    # TODO: Evaluation result here ...
 
-        
-fread = open("test_for_student.label", "r")
-video_ids = []
-for line in fread.readlines():
-    video_id = os.path.splitext(line.strip())[0]
-    video_ids.append(video_id)
-
+video_ids = [test_dataset.df.iloc[i, 0] for i in range(len(test_dataset))]
 
 with open('result.csv', "w") as f:
     f.writelines("Id,Category\n")
     for i, pred_class in enumerate(result):
         f.writelines("%s,%d\n" % (video_ids[i], pred_class))
-
-

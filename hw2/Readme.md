@@ -12,6 +12,10 @@ We give you a video folder `video_frames_30fpv_320p`. Under each sub folder, the
 
 Codebase: [https://github.com/hkust-aiaa2205/homework/tree/main/hw2](https://github.com/hkust-aiaa2205/homework/tree/main/hw2)
 
+### Rules
+
+You can use any or all of the 30 images to train and test your model. **You are not allowed to use pre-trained models from other datasets!**
+
 ### CNN classifier
 
 We use CNN as classifier.

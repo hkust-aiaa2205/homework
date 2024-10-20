@@ -14,7 +14,7 @@ Codebase: [https://github.com/hkust-aiaa2205/homework/tree/main/hw2](https://git
 
 ### Rules
 
-You can use any or all of the 30 images to train and test your model. **You are not allowed to use pre-trained models from other datasets!**
+You can use any or all of the 30 images to train and test your model. **You are allowed to use pretrained models and weights (only ImageNet-1K pertaining is allowed).** See this [post](https://hkust-gz.instructure.com/courses/1409/discussion_topics/7858).
 
 ### CNN classifier
 

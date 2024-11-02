@@ -1,17 +1,17 @@
+import os
+import pandas as pd
+import time
+from PIL import Image
+from sklearn.model_selection import train_test_split
+from dataset import MyDataset
+from models import VideoResNet
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import pandas as pd
 from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
-from PIL import Image
-from sklearn.model_selection import train_test_split
-import time
-from dataset import MyDataset
-from models import VideoResNet
-import os
 
-# os.environ['CUDA_VISIBLE_DEVICES'] = '7'
 torch.backends.cudnn.benchmark = True
 
 transforms = transforms.Compose([

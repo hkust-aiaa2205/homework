@@ -92,8 +92,3 @@ for epoch in range(50):
         torch.save(model.state_dict(), './ResNet18_best_val.pth')
   
     torch.save(model.state_dict(), './ResNet18_last.pth')
-
-    end_time = time.time()  # 记录结束时间
-    print('[Epoch %d] Loss (train/val): %.3f/%.3f' % (epoch + 1, running_loss_train / len(train_loader), running_loss_val / len(val_loader)),
-          ' Acc (train/val): %.2f%%/%.2f%%' % (100 * correct_train / total_train, 100 * correct_val / total_val),
-          ' Epoch Time: %.2f' % (end_time - start_time))

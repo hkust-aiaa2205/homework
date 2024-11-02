@@ -4,7 +4,7 @@ In this homework we will perform a video classification task using 3D CNN.
 
 ## Data and Labels
 
-Please download data from kaggle with this [link]([https://www.kaggle.com/competitions/hkustgz-aiaa-5032-hw3-spring-2024/data](https://www.kaggle.com/competitions/hkustgz-aiaa-2205-hw-3-fall-2024/data)).
+Please download data from kaggle with this [link](https://www.kaggle.com/competitions/hkustgz-aiaa-2205-hw-3-fall-2024/data).
 
 ## Step-by-step baseline instructions
 

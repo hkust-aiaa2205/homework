@@ -1,48 +1,49 @@
-# Instructions for hw3
+# Homework 3: Video Classification with 3D CNN
 
-In this homework we will perform a video classification task using 3D CNN.
+Welcome to the third homework assignment, where we'll tackle the task of video classification using 3D Convolutional Neural Networks (CNNs).
 
 ## Data and Labels
 
-Please download data from kaggle with this [link](https://www.kaggle.com/competitions/hkustgz-aiaa-2205-hw-3-fall-2024/data).
+To access the data for this assignment, please download it from the following Kaggle link: [link](https://www.kaggle.com/competitions/hkustgz-aiaa-2205-hw-3-fall-2024/data).
 
-## Step-by-step baseline instructions
+## Dataset Structure
 
-We give you a video folder, **hw3_16fpv**. Under each sub folder, there are 16 images from one video, we use these 16 image to form a 5D Tensor(N C D H W). We also provide you the origon mp4 videos.
+You will find a video folder named hw3_16fpv. Each subfolder contains 16 frames extracted from a single video. These frames are used to construct a 5D Tensor with dimensions (N C D H W). Additionally, the original MP4 videos are provided.
 
-### CNN classifier
+## Baseline Model
 
-We use ResNet18-3D as a baseline.
+We have provided a baseline model using ResNet18-3D.
 
-Suppose you are under `hw3` directory. Train ResNet18-3D by:
+Navigate to the hw3 directory and execute the following command to train the ResNet18-3D model:
 
 ```
 $ python train.py
 ```
 
-Run Model Inference on the test set:
+To perform inference on the test set, run:
 
 ```
 $ python test2csv.py
 ```
 
 
-### Submission to Kaggle
+## Submitting to Kaggle
 
-You can then submit the test outputs to the leaderboard:
+After obtaining your test outputs, submit them to the leaderboard via the following URL:
 
 ```
 https://www.kaggle.com/competitions/hkustgz-aiaa-2205-hw-3-fall-2024/
 ```
 
-We use accuracy as the evaluation metric. Please refer to `test_for_student.csv` for submission format.
-
-### Things to try to improve your model performance
-
-Now here comes the fun part. You can start experimenting with the code and exploring how you can improve your model performance. Some hints:
-
-+ Try to extract different frames(other than 16) of each video with ffmpeg.
-+ Try diffirent Neural Network Design.
+The evaluation metric for this competition is accuracy. Please refer to test_for_student.csv for the correct submission format.
 
 
+## Enhancing Model Performance
 
+Now, let's dive into the exciting part—improving your model's performance. Here are some suggestions to get you started:
+
+- Frame Extraction: Experiment with extracting different frames (other than 16) from each video using ffmpeg.
+- Neural Network Architecture: Explore alternative neural network designs to see if they yield better results.
+- Data Augmentation: Implement various data augmentation strategies to enhance the dataset's diversity.
+
+Good luck, and happy experimenting! 😄 🎉
